@@ -21,6 +21,7 @@
   <button onclick="mostrarSeccion('cuotas')">Cuotas</button>
   <button onclick="mostrarSeccion('amortizacionFrancesa')">Amortización Francesa</button>
   <button onclick="mostrarSeccion('amortizacionAlemana')">Amortización Alemana</button>
+  <button onclick="mostrarSeccion('test')">Test</button>
   <button onclick="mostrarSeccion('acercaProyecto')">Acerca del Proyecto</button>
 </nav>
 
@@ -30,10 +31,36 @@
     <h2>Inicio</h2>
 
     <div class="card">
-      <h3>Introducción</h3>
+      <h3>¿Qué es la matemática financiera?</h3>
 
-      <!-- Aquí irá una explicación general de la matemática financiera -->
+      <p>
+        La matemática financiera es una rama de la matemática que estudia el valor del dinero
+        a través del tiempo. Permite realizar cálculos relacionados con intereses, préstamos,
+        inversiones, cuotas y amortizaciones.
+      </p>
 
+      <p>
+        Su importancia está en que ayuda a tomar mejores decisiones económicas, ya que permite
+        conocer cuánto vale el dinero en el presente, cuánto puede crecer en el futuro y cómo se
+        pagan las deudas mediante diferentes sistemas financieros.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Significado de las variables</h3>
+
+      <ul>
+        <li><strong>VP:</strong> Valor presente</li>
+        <li><strong>VF:</strong> Valor futuro</li>
+        <li><strong>C:</strong> Capital inicial</li>
+        <li><strong>M:</strong> Monto final</li>
+        <li><strong>I:</strong> Interés</li>
+        <li><strong>R:</strong> Cuota periódica</li>
+        <li><strong>P:</strong> Préstamo</li>
+        <li><strong>i:</strong> Tasa de interés</li>
+        <li><strong>n:</strong> Número de períodos</li>
+        <li><strong>t:</strong> Tiempo</li>
+      </ul>
     </div>
   </section>
 
@@ -42,13 +69,30 @@
 
     <div class="card">
       <h3>Concepto</h3>
-      <!-- Aquí irá el concepto de valor presente -->
+
+      <p>
+        El valor presente permite conocer cuánto vale hoy una cantidad de dinero que se recibirá
+        en el futuro.
+      </p>
+
+      <h3>Características</h3>
+
+      <ul>
+        <li>Trae un valor futuro al momento actual.</li>
+        <li>Considera la tasa de interés y el tiempo.</li>
+      </ul>
 
       <h3>Fórmula</h3>
-      <!-- Aquí irá la fórmula de valor presente -->
+
+      <p class="formula">
+        VP = VF / (1 + i)<sup>n</sup>
+      </p>
 
       <h3>Ejemplo</h3>
-      <!-- Aquí irá un ejemplo práctico -->
+
+      <div class="ejemplo">
+        <!-- Aquí irá el ejemplo de valor presente -->
+      </div>
     </div>
   </section>
 
@@ -57,13 +101,30 @@
 
     <div class="card">
       <h3>Concepto</h3>
-      <!-- Aquí irá el concepto de valor futuro -->
+
+      <p>
+        El valor futuro permite calcular cuánto dinero se tendrá después de un tiempo aplicando
+        una tasa de interés.
+      </p>
+
+      <h3>Características</h3>
+
+      <ul>
+        <li>Muestra el crecimiento de una inversión.</li>
+        <li>Depende del capital inicial, la tasa y el número de períodos.</li>
+      </ul>
 
       <h3>Fórmula</h3>
-      <!-- Aquí irá la fórmula de valor futuro -->
+
+      <p class="formula">
+        VF = VP(1 + i)<sup>n</sup>
+      </p>
 
       <h3>Ejemplo</h3>
-      <!-- Aquí irá un ejemplo práctico -->
+
+      <div class="ejemplo">
+        <!-- Aquí irá el ejemplo de valor futuro -->
+      </div>
     </div>
   </section>
 
@@ -72,13 +133,33 @@
 
     <div class="card">
       <h3>Concepto</h3>
-      <!-- Aquí irá el concepto de interés simple -->
+
+      <p>
+        El interés simple es el interés calculado solo sobre el capital inicial.
+      </p>
+
+      <h3>Características</h3>
+
+      <ul>
+        <li>Los intereses no se suman al capital.</li>
+        <li>Se usa normalmente en préstamos de corto plazo.</li>
+      </ul>
 
       <h3>Fórmula</h3>
-      <!-- Aquí irá la fórmula de interés simple -->
+
+      <p class="formula">
+        I = C × i × t
+      </p>
+
+      <p class="formula">
+        M = C + I
+      </p>
 
       <h3>Ejemplo</h3>
-      <!-- Aquí irá un ejemplo práctico -->
+
+      <div class="ejemplo">
+        <!-- Aquí irá el ejemplo de interés simple -->
+      </div>
     </div>
   </section>
 
@@ -87,13 +168,30 @@
 
     <div class="card">
       <h3>Concepto</h3>
-      <!-- Aquí irá el concepto de interés compuesto -->
+
+      <p>
+        El interés compuesto es el interés que se calcula sobre el capital inicial más los
+        intereses acumulados.
+      </p>
+
+      <h3>Características</h3>
+
+      <ul>
+        <li>Genera intereses sobre intereses.</li>
+        <li>Hace que el dinero crezca más rápido que con interés simple.</li>
+      </ul>
 
       <h3>Fórmula</h3>
-      <!-- Aquí irá la fórmula de interés compuesto -->
+
+      <p class="formula">
+        M = C(1 + i)<sup>n</sup>
+      </p>
 
       <h3>Ejemplo</h3>
-      <!-- Aquí irá un ejemplo práctico -->
+
+      <div class="ejemplo">
+        <!-- Aquí irá el ejemplo de interés compuesto -->
+      </div>
     </div>
   </section>
 
@@ -102,13 +200,29 @@
 
     <div class="card">
       <h3>Concepto</h3>
-      <!-- Aquí irá el concepto de cuotas -->
+
+      <p>
+        Las cuotas son pagos que se realizan cada cierto tiempo para cancelar una deuda o préstamo.
+      </p>
+
+      <h3>Características</h3>
+
+      <ul>
+        <li>Pueden incluir capital e intereses.</li>
+        <li>Pueden ser mensuales, trimestrales, semestrales o anuales.</li>
+      </ul>
 
       <h3>Fórmula</h3>
-      <!-- Aquí irá la fórmula de cuota fija -->
+
+      <p class="formula">
+        R = (P × i) / [1 - (1 + i)<sup>-n</sup>]
+      </p>
 
       <h3>Ejemplo</h3>
-      <!-- Aquí irá un ejemplo práctico -->
+
+      <div class="ejemplo">
+        <!-- Aquí irá el ejemplo de cuotas y pagos periódicos -->
+      </div>
     </div>
   </section>
 
@@ -117,13 +231,31 @@
 
     <div class="card">
       <h3>Concepto</h3>
-      <!-- Aquí irá el concepto de amortización francesa -->
+
+      <p>
+        La amortización francesa es un sistema de pago donde las cuotas son iguales durante
+        todo el préstamo.
+      </p>
 
       <h3>Características</h3>
-      <!-- Aquí irán las características principales -->
+
+      <ul>
+        <li>Las cuotas son constantes.</li>
+        <li>Al inicio se paga más interés y menos capital.</li>
+        <li>Con el tiempo, baja el interés y sube el pago al capital.</li>
+      </ul>
+
+      <h3>Fórmula relacionada</h3>
+
+      <p class="formula">
+        R = (P × i) / [1 - (1 + i)<sup>-n</sup>]
+      </p>
 
       <h3>Ejemplo</h3>
-      <!-- Aquí irá una tabla de ejemplo -->
+
+      <div class="ejemplo">
+        <!-- Aquí irá una tabla o ejemplo de amortización francesa -->
+      </div>
     </div>
   </section>
 
@@ -132,14 +264,73 @@
 
     <div class="card">
       <h3>Concepto</h3>
-      <!-- Aquí irá el concepto de amortización alemana -->
+
+      <p>
+        La amortización alemana es un sistema donde el pago al capital es constante y las cuotas
+        disminuyen con el tiempo.
+      </p>
 
       <h3>Características</h3>
-      <!-- Aquí irán las características principales -->
+
+      <ul>
+        <li>El capital pagado es fijo.</li>
+        <li>Los intereses disminuyen en cada período.</li>
+        <li>Las cuotas son cada vez menores.</li>
+      </ul>
+
+      <h3>Fórmulas relacionadas</h3>
+
+      <p class="formula">
+        Amortización = P / n
+      </p>
+
+      <p class="formula">
+        Interés = Saldo pendiente × i
+      </p>
+
+      <p class="formula">
+        Cuota = Amortización + Interés
+      </p>
 
       <h3>Ejemplo</h3>
-      <!-- Aquí irá una tabla de ejemplo -->
+
+      <div class="ejemplo">
+        <!-- Aquí irá una tabla o ejemplo de amortización alemana -->
+      </div>
     </div>
+  </section>
+
+  <section id="test">
+    <h2>Test de Evaluación</h2>
+
+    <div class="card">
+      <h3>Pregunta 1</h3>
+      <!-- Aquí irá la primera pregunta de opción múltiple -->
+    </div>
+
+    <div class="card">
+      <h3>Pregunta 2</h3>
+      <!-- Aquí irá la segunda pregunta de opción múltiple -->
+    </div>
+
+    <div class="card">
+      <h3>Pregunta 3</h3>
+      <!-- Aquí irá la tercera pregunta de opción múltiple -->
+    </div>
+
+    <div class="card">
+      <h3>Pregunta 4</h3>
+      <!-- Aquí irá la cuarta pregunta de opción múltiple -->
+    </div>
+
+    <div class="card">
+      <h3>Pregunta 5</h3>
+      <!-- Aquí irá la quinta pregunta de opción múltiple -->
+    </div>
+
+    <button onclick="calificarTest()">Calificar test</button>
+
+    <p id="resultadoTest"></p>
   </section>
 
   <section id="acercaProyecto">
@@ -148,8 +339,32 @@
     <div class="card">
       <h3>Información del proyecto</h3>
 
-      <!-- Aquí irá el nombre del proyecto, integrantes, objetivo y tecnologías utilizadas -->
+      <p>
+        <strong>Nombre del proyecto:</strong> Página de estudio sobre Matemática Financiera
+      </p>
 
+      <p>
+        <strong>Fundamento matemático:</strong> Matemática financiera
+      </p>
+
+      <p>
+        <strong>Objetivo:</strong>
+        Crear una página web educativa que permita estudiar conceptos financieros básicos
+        mediante explicaciones, fórmulas, ejemplos y un test de evaluación.
+      </p>
+
+      <p>
+        <strong>Integrantes:</strong>
+      </p>
+
+      <ul>
+        <li>César Alexxander</li>
+        <li>Nombre del compañero</li>
+      </ul>
+
+      <p>
+        <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript y GitHub.
+      </p>
     </div>
   </section>
 
