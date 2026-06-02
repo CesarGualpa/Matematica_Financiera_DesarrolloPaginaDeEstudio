@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Matemática Financiera</title>
-  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
 <header>
   <h1>Matemática Financiera</h1>
   <p>Página de estudio sobre fundamentos matemáticos aplicados a las finanzas</p>
+  <link rel="stylesheet" href="estilos.css">
 </header>
 
+<!-- Barra de navegación de la página -->
 <nav>
   <button onclick="mostrarSeccion('inicio')">Inicio</button>
   <button onclick="mostrarSeccion('conceptosBasicos')">Conceptos Básicos</button>
@@ -20,7 +21,7 @@
 </nav>
 
 <main>
-
+<!-- Sección de inicio con la informacion de la matematica financiera -->
   <section id="inicio" class="activa">
     <h2>Inicio</h2>
 
@@ -50,9 +51,11 @@
     </div>
   </section>
 
+<!-- Sección con los conceptos de los subtemas y sus fórmulas -->
   <section id="conceptosBasicos">
     <h2>Conceptos Básicos</h2>
 
+    <!-- Descripción del Valor Presente -->
     <div class="card">
       <h3>Valor Presente</h3>
 
@@ -86,6 +89,7 @@
       </div>
     </div>
 
+    <!-- Descripción del Valor Futuro -->
     <div class="card">
       <h3>Valor Futuro</h3>
 
@@ -119,6 +123,7 @@
       </div>
     </div>
 
+    <!-- Descripción del Interes Simple -->
     <div class="card">
       <h3>Interés Simple</h3>
 
@@ -160,6 +165,7 @@
       </div>
     </div>
 
+    <!-- Descripción del Interes Compuesto -->
     <div class="card">
       <h3>Interés Compuesto</h3>
 
@@ -193,6 +199,7 @@
       </div>
     </div>
 
+    <!-- Descripción de las Cuotas -->
     <div class="card">
       <h3>Cuotas</h3>
 
@@ -226,6 +233,7 @@
       </div>
     </div>
 
+    <!-- Descripción de la Amortización Francesa -->
     <div class="card">
       <h3>Amortización Francesa</h3>
 
@@ -287,6 +295,7 @@
       </div>
     </div>
 
+    <!-- Descripción de la Amortización Alemana -->
     <div class="card">
       <h3>Amortización Alemana</h3>
 
@@ -348,6 +357,7 @@
       </div>
     </div>
 
+    <!-- Significados de las siglas -->
     <div class="card">
       <h3>Significado de las variables</h3>
 
@@ -366,9 +376,11 @@
     </div>
   </section>
 
+<!-- Sección del test de evaluacion de la Matematica Financiera -->
   <section id="test">
     <h2>Test de Evaluación</h2>
 
+    <!-- Pregunta 1 -->
     <div class="card">
       <p><strong>1. ¿Qué estudia la matemática financiera?</strong></p>
 
@@ -388,6 +400,7 @@
       </label>
     </div>
 
+    <!-- Pregunta 2 -->
     <div class="card">
       <p><strong>2. ¿Qué calcula el valor presente?</strong></p>
 
@@ -407,6 +420,7 @@
       </label>
     </div>
 
+    <!-- Pregunta 3 -->
     <div class="card">
       <p><strong>3. ¿Sobre qué se calcula el interés simple?</strong></p>
 
@@ -426,6 +440,7 @@
       </label>
     </div>
 
+    <!-- Pregunta 4 -->
     <div class="card">
       <p><strong>4. ¿Qué ocurre en el interés compuesto?</strong></p>
 
@@ -445,6 +460,7 @@
       </label>
     </div>
 
+    <!-- Pregunta 5 -->
     <div class="card">
       <p><strong>5. ¿Qué caracteriza a la amortización francesa?</strong></p>
 
@@ -470,6 +486,7 @@
     <p id="resultadoTest" style="visibility: hidden;"></p>
   </section>
 
+<!-- Sección de la informacion sobre los integrantes -->
   <section id="acercaProyecto">
     <h2>Acerca del Proyecto</h2>
 
