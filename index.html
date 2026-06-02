@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Matemática Financiera</title>
-  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
 <header>
   <h1>Matemática Financiera</h1>
   <p>Página de estudio sobre fundamentos matemáticos aplicados a las finanzas</p>
+  <link rel="stylesheet" href="estilos.css">
 </header>
 
+<!-- Barra de navegación de la página -->
 <nav>
   <button onclick="mostrarSeccion('inicio')">Inicio</button>
   <button onclick="mostrarSeccion('conceptosBasicos')">Conceptos Básicos</button>
@@ -20,7 +21,7 @@
 </nav>
 
 <main>
-
+<!-- Sección de inicio con la informacion de la matematica financiera -->
   <section id="inicio" class="activa">
     <h2>Inicio</h2>
 
@@ -50,9 +51,11 @@
     </div>
   </section>
 
+<!-- Sección con los conceptos de los subtemas y sus fórmulas -->
   <section id="conceptosBasicos">
     <h2>Conceptos Básicos</h2>
 
+    <!-- Descripción del Valor Presente -->
     <div class="card">
       <h3>Valor Presente</h3>
 
@@ -69,15 +72,15 @@
       <h4>Ejemplo</h4>
       <div class="ejemplo">
         <p>
-          Si recibirás $1210 dentro de 2 años con una tasa del 10% anual:
+          Si recibirás $1331 dentro de 3 años con una tasa del 10% anual:
         </p>
 
         <p class="formula">
-          VP = 1210 / (1 + 0.10)<sup>2</sup>
+          VP = 1331 / (1 + 0.10)<sup>3</sup>
         </p>
 
         <p class="formula">
-          VP = 1210 / 1.21 = 1000
+          VP = 1331 / 1.331 = 1000
         </p>
 
         <p>
@@ -86,6 +89,7 @@
       </div>
     </div>
 
+    <!-- Descripción del Valor Futuro -->
     <div class="card">
       <h3>Valor Futuro</h3>
 
@@ -102,23 +106,24 @@
       <h4>Ejemplo</h4>
       <div class="ejemplo">
         <p>
-          Si inviertes $1000 al 10% anual durante 2 años:
+          Si inviertes $800 al 5% anual durante 2 años:
         </p>
 
         <p class="formula">
-          VF = 1000(1 + 0.10)<sup>2</sup>
+          VF = 800(1 + 0.05)<sup>2</sup>
         </p>
 
         <p class="formula">
-          VF = 1000(1.21) = 1210
+          VF = 800(1.1025) = 882
         </p>
 
         <p>
-          El valor futuro será <strong>$1210</strong>.
+          El valor futuro será <strong>$882</strong>.
         </p>
       </div>
     </div>
 
+    <!-- Descripción del Interes Simple -->
     <div class="card">
       <h3>Interés Simple</h3>
 
@@ -139,27 +144,28 @@
       <h4>Ejemplo</h4>
       <div class="ejemplo">
         <p>
-          Si una persona recibe un préstamo de $2000 al 5% anual durante 3 años:
+          Si una persona recibe un préstamo de $1500 al 6% anual durante 4 años:
         </p>
 
         <p class="formula">
-          I = 2000 × 0.05 × 3
+          I = 1500 × 0.06 × 4
         </p>
 
         <p class="formula">
-          I = 300
+          I = 360
         </p>
 
         <p class="formula">
-          M = 2000 + 300 = 2300
+          M = 1500 + 360 = 1860
         </p>
 
         <p>
-          El interés será <strong>$300</strong> y el monto total será <strong>$2300</strong>.
+          El interés será <strong>$360</strong> y el monto total será <strong>$1860</strong>.
         </p>
       </div>
     </div>
 
+    <!-- Descripción del Interes Compuesto -->
     <div class="card">
       <h3>Interés Compuesto</h3>
 
@@ -176,23 +182,24 @@
       <h4>Ejemplo</h4>
       <div class="ejemplo">
         <p>
-          Si inviertes $3000 al 8% anual durante 2 años:
+          Si inviertes $2000 al 5% anual durante 3 años:
         </p>
 
         <p class="formula">
-          M = 3000(1 + 0.08)<sup>2</sup>
+          M = 2000(1 + 0.05)<sup>3</sup>
         </p>
 
         <p class="formula">
-          M = 3000(1.1664) = 3499.20
+          M = 2000(1.157625) = 2315.25
         </p>
 
         <p>
-          El monto final será <strong>$3499.20</strong>.
+          El monto final será <strong>$2315.25</strong>.
         </p>
       </div>
     </div>
 
+    <!-- Descripción de las Cuotas -->
     <div class="card">
       <h3>Cuotas</h3>
 
@@ -209,23 +216,24 @@
       <h4>Ejemplo</h4>
       <div class="ejemplo">
         <p>
-          Si se solicita un préstamo de $5000 al 2% mensual durante 12 meses:
+          Si se solicita un préstamo de $1200 al 2% mensual durante 4 meses:
         </p>
 
         <p class="formula">
-          R = (5000 × 0.02) / [1 - (1 + 0.02)<sup>-12</sup>]
+          R = (1200 × 0.02) / [1 - (1 + 0.02)<sup>-4</sup>]
         </p>
 
         <p class="formula">
-          R ≈ 472.80
+          R ≈ 315.18
         </p>
 
         <p>
-          La cuota mensual será aproximadamente <strong>$472.80</strong>.
+          La cuota mensual será aproximadamente <strong>$315.18</strong>.
         </p>
       </div>
     </div>
 
+    <!-- Descripción de la Amortización Francesa -->
     <div class="card">
       <h3>Amortización Francesa</h3>
 
@@ -244,7 +252,7 @@
       <h4>Ejemplo</h4>
       <div class="ejemplo">
         <p>
-          Si la cuota fija es de $100, al inicio se paga más interés y menos capital:
+          Si la cuota fija es de $150, al inicio se paga más interés y menos capital:
         </p>
 
         <table>
@@ -257,26 +265,26 @@
             </tr>
           </thead>
 
-          <tbody>
+          <tbody> <!--Cuerpo-->
             <tr>
               <td>1</td>
-              <td>100</td>
-              <td>20</td>
-              <td>80</td>
+              <td>150</td>
+              <td>30</td>
+              <td>120</td>
             </tr>
 
             <tr>
               <td>2</td>
-              <td>100</td>
-              <td>18</td>
-              <td>82</td>
+              <td>150</td>
+              <td>25</td>
+              <td>125</td>
             </tr>
 
             <tr>
               <td>3</td>
-              <td>100</td>
-              <td>16</td>
-              <td>84</td>
+              <td>150</td>
+              <td>20</td>
+              <td>130</td>
             </tr>
           </tbody>
         </table>
@@ -287,6 +295,7 @@
       </div>
     </div>
 
+    <!-- Descripción de la Amortización Alemana -->
     <div class="card">
       <h3>Amortización Alemana</h3>
 
@@ -305,7 +314,7 @@
       <h4>Ejemplo</h4>
       <div class="ejemplo">
         <p>
-          Si el pago fijo al capital es de $100, los intereses bajan en cada período:
+          Si el pago fijo al capital es de $150, los intereses bajan en cada período:
         </p>
 
         <table>
@@ -318,26 +327,26 @@
             </tr>
           </thead>
 
-          <tbody>
+          <tbody> <!--Cuerpo-->
             <tr>
               <td>1</td>
-              <td>100</td>
-              <td>20</td>
-              <td>120</td>
+              <td>150</td>
+              <td>45</td>
+              <td>195</td>
             </tr>
 
             <tr>
               <td>2</td>
-              <td>100</td>
-              <td>18</td>
-              <td>118</td>
+              <td>150</td>
+              <td>36</td>
+              <td>186</td>
             </tr>
 
             <tr>
               <td>3</td>
-              <td>100</td>
-              <td>16</td>
-              <td>116</td>
+              <td>150</td>
+              <td>27</td>
+              <td>177</td>
             </tr>
           </tbody>
         </table>
@@ -348,6 +357,7 @@
       </div>
     </div>
 
+    <!-- Significados de las siglas -->
     <div class="card">
       <h3>Significado de las variables</h3>
 
@@ -366,9 +376,11 @@
     </div>
   </section>
 
+<!-- Sección del test de evaluacion de la Matematica Financiera -->
   <section id="test">
     <h2>Test de Evaluación</h2>
 
+    <!-- Pregunta 1 -->
     <div class="card">
       <p><strong>1. ¿Qué estudia la matemática financiera?</strong></p>
 
@@ -376,7 +388,7 @@
         <input type="radio" name="p1" value="a">
         El valor del dinero en el tiempo
       </label>
-
+      
       <label>
         <input type="radio" name="p1" value="b">
         Solo figuras geométricas
@@ -388,6 +400,7 @@
       </label>
     </div>
 
+    <!-- Pregunta 2 -->
     <div class="card">
       <p><strong>2. ¿Qué calcula el valor presente?</strong></p>
 
@@ -407,6 +420,7 @@
       </label>
     </div>
 
+    <!-- Pregunta 3 -->
     <div class="card">
       <p><strong>3. ¿Sobre qué se calcula el interés simple?</strong></p>
 
@@ -426,6 +440,7 @@
       </label>
     </div>
 
+    <!-- Pregunta 4 -->
     <div class="card">
       <p><strong>4. ¿Qué ocurre en el interés compuesto?</strong></p>
 
@@ -445,6 +460,7 @@
       </label>
     </div>
 
+    <!-- Pregunta 5 -->
     <div class="card">
       <p><strong>5. ¿Qué caracteriza a la amortización francesa?</strong></p>
 
@@ -463,12 +479,14 @@
         No se pagan intereses
       </label>
     </div>
-
+    <div style="text-align: center;">
     <button onclick="calificarTest()">Calificar test</button>
+    </div>
 
-    <p id="resultadoTest"></p>
+    <p id="resultadoTest" style="visibility: hidden;"></p>
   </section>
 
+<!-- Sección de la informacion sobre los integrantes -->
   <section id="acercaProyecto">
     <h2>Acerca del Proyecto</h2>
 
