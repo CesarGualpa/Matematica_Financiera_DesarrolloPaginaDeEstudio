@@ -3,361 +3,213 @@
 <head>
   <meta charset="UTF-8">
   <title>Matemática Financiera</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
 <header>
   <h1>Matemática Financiera</h1>
   <p>Página de estudio sobre fundamentos matemáticos aplicados a las finanzas</p>
-  <link rel="stylesheet" href="estilos.css">
 </header>
 
-<!-- Barra de navegación de la página -->
+<!--Barra de navegacion de la pagina-->
 <nav>
-  <button onclick="mostrarSeccion('inicio')">Inicio</button>
-  <button onclick="mostrarSeccion('conceptosBasicos')">Conceptos Básicos</button>
-  <button onclick="mostrarSeccion('test')">Test</button>
-  <button onclick="mostrarSeccion('acercaProyecto')">Acerca del Proyecto</button>
+  <button onclick="mostrarInicio()">Inicio</button>
+  <button onclick="mostrarConceptos()">Conceptos Básicos</button>
+  <button onclick="mostrarTest()">Test</button>
+
+  <!--NUEVO BOTON-->
+  <button onclick="mostrarAplicacion()">Aplicación Práctica</button>
+
+  <button onclick="mostrarAcerca()">Acerca del Proyecto</button>
 </nav>
 
 <main>
-<!-- Sección de inicio con la informacion de la matematica financiera -->
-  <section id="inicio" class="activa">
+
+  <!-- Sección de inicio con la informacion de la matematica financiera -->
+  <section id="inicio">
     <h2>Inicio</h2>
 
     <div class="card">
       <h3>¿Qué es la matemática financiera?</h3>
-
       <p>
-        La matemática financiera es una rama de la matemática que estudia el valor del dinero
-        a través del tiempo. Permite realizar cálculos relacionados con intereses, préstamos,
-        inversiones, cuotas y amortizaciones.
-      </p>
-
-      <p>
-        Su importancia está en que ayuda a tomar mejores decisiones económicas, ya que permite
-        conocer cuánto vale el dinero en el presente, cuánto puede crecer en el futuro y cómo se
-        pagan las deudas mediante diferentes sistemas financieros.
+        La matemática financiera estudia el valor del dinero a través del tiempo.
+        Sirve para calcular intereses, préstamos, inversiones, cuotas y amortizaciones.
       </p>
     </div>
 
     <div class="card">
       <h3>Objetivo de la página</h3>
-
       <p>
-        Esta página tiene como objetivo explicar los conceptos básicos de la matemática financiera
-        de forma clara, corta y didáctica, usando fórmulas, ejemplos y un test de evaluación.
+        Esta página explica conceptos básicos de matemática financiera usando ejemplos,
+        fórmulas y un test de evaluación.
       </p>
     </div>
   </section>
 
-<!-- Sección con los conceptos de los subtemas y sus fórmulas -->
   <section id="conceptosBasicos">
     <h2>Conceptos Básicos</h2>
 
-    <!-- Descripción del Valor Presente -->
     <div class="card">
       <h3>Valor Presente</h3>
+      <p>Permite conocer cuánto vale hoy una cantidad de dinero que se recibirá en el futuro.</p>
 
-      <h4>Concepto</h4>
+      <p class="formula">VP = VF / (1 + i)<sup>n</sup></p>
+
       <p>
-        Permite conocer cuánto vale hoy una cantidad de dinero que se recibirá en el futuro.
+        Ejemplo: Si recibirás $1331 dentro de 3 años con una tasa del 10% anual:
       </p>
 
-      <h4>Fórmula</h4>
-      <p class="formula">
-        VP = VF / (1 + i)<sup>n</sup>
-      </p>
+      <p class="formula">VP = 1331 / (1 + 0.10)<sup>3</sup></p>
+      <p class="formula">VP = 1331 / 1.331 = 1000</p>
 
-      <h4>Ejemplo</h4>
-      <div class="ejemplo">
-        <p>
-          Si recibirás $1331 dentro de 3 años con una tasa del 10% anual:
-        </p>
-
-        <p class="formula">
-          VP = 1331 / (1 + 0.10)<sup>3</sup>
-        </p>
-
-        <p class="formula">
-          VP = 1331 / 1.331 = 1000
-        </p>
-
-        <p>
-          El valor presente es <strong>$1000</strong>.
-        </p>
-      </div>
+      <p>El valor presente es <strong>$1000</strong>.</p>
     </div>
 
-    <!-- Descripción del Valor Futuro -->
     <div class="card">
       <h3>Valor Futuro</h3>
+      <p>Permite calcular cuánto dinero se tendrá después de un tiempo aplicando una tasa de interés.</p>
 
-      <h4>Concepto</h4>
-      <p>
-        Permite calcular cuánto dinero se tendrá después de un tiempo aplicando una tasa de interés.
-      </p>
+      <p class="formula">VF = VP(1 + i)<sup>n</sup></p>
 
-      <h4>Fórmula</h4>
-      <p class="formula">
-        VF = VP(1 + i)<sup>n</sup>
-      </p>
+      <p>Ejemplo: Si inviertes $800 al 5% anual durante 2 años:</p>
 
-      <h4>Ejemplo</h4>
-      <div class="ejemplo">
-        <p>
-          Si inviertes $800 al 5% anual durante 2 años:
-        </p>
+      <p class="formula">VF = 800(1 + 0.05)<sup>2</sup></p>
+      <p class="formula">VF = 800(1.1025) = 882</p>
 
-        <p class="formula">
-          VF = 800(1 + 0.05)<sup>2</sup>
-        </p>
-
-        <p class="formula">
-          VF = 800(1.1025) = 882
-        </p>
-
-        <p>
-          El valor futuro será <strong>$882</strong>.
-        </p>
-      </div>
+      <p>El valor futuro será <strong>$882</strong>.</p>
     </div>
 
-    <!-- Descripción del Interes Simple -->
     <div class="card">
       <h3>Interés Simple</h3>
+      <p>Es el interés calculado solo sobre el capital inicial.</p>
 
-      <h4>Concepto</h4>
-      <p>
-        Es el interés calculado solo sobre el capital inicial.
-      </p>
+      <p class="formula">I = C × i × t</p>
+      <p class="formula">M = C + I</p>
 
-      <h4>Fórmula</h4>
-      <p class="formula">
-        I = C × i × t
-      </p>
+      <p>Ejemplo: Si una persona recibe un préstamo de $1500 al 6% anual durante 4 años:</p>
 
-      <p class="formula">
-        M = C + I
-      </p>
+      <p class="formula">I = 1500 × 0.06 × 4</p>
+      <p class="formula">I = 360</p>
+      <p class="formula">M = 1500 + 360 = 1860</p>
 
-      <h4>Ejemplo</h4>
-      <div class="ejemplo">
-        <p>
-          Si una persona recibe un préstamo de $1500 al 6% anual durante 4 años:
-        </p>
-
-        <p class="formula">
-          I = 1500 × 0.06 × 4
-        </p>
-
-        <p class="formula">
-          I = 360
-        </p>
-
-        <p class="formula">
-          M = 1500 + 360 = 1860
-        </p>
-
-        <p>
-          El interés será <strong>$360</strong> y el monto total será <strong>$1860</strong>.
-        </p>
-      </div>
+      <p>El interés será <strong>$360</strong> y el monto total será <strong>$1860</strong>.</p>
     </div>
 
-    <!-- Descripción del Interes Compuesto -->
     <div class="card">
       <h3>Interés Compuesto</h3>
+      <p>Es el interés que se calcula sobre el capital inicial más los intereses acumulados.</p>
 
-      <h4>Concepto</h4>
-      <p>
-        Es el interés que se calcula sobre el capital inicial más los intereses acumulados.
-      </p>
+      <p class="formula">M = C(1 + i)<sup>n</sup></p>
 
-      <h4>Fórmula</h4>
-      <p class="formula">
-        M = C(1 + i)<sup>n</sup>
-      </p>
+      <p>Ejemplo: Si inviertes $2000 al 5% anual durante 3 años:</p>
 
-      <h4>Ejemplo</h4>
-      <div class="ejemplo">
-        <p>
-          Si inviertes $2000 al 5% anual durante 3 años:
-        </p>
+      <p class="formula">M = 2000(1 + 0.05)<sup>3</sup></p>
+      <p class="formula">M = 2000(1.157625) = 2315.25</p>
 
-        <p class="formula">
-          M = 2000(1 + 0.05)<sup>3</sup>
-        </p>
-
-        <p class="formula">
-          M = 2000(1.157625) = 2315.25
-        </p>
-
-        <p>
-          El monto final será <strong>$2315.25</strong>.
-        </p>
-      </div>
+      <p>El monto final será <strong>$2315.25</strong>.</p>
     </div>
 
-    <!-- Descripción de las Cuotas -->
     <div class="card">
       <h3>Cuotas</h3>
+      <p>Son pagos que se realizan cada cierto tiempo para cancelar una deuda o préstamo.</p>
 
-      <h4>Concepto</h4>
-      <p>
-        Son pagos que se realizan cada cierto tiempo para cancelar una deuda o préstamo.
-      </p>
+      <p class="formula">R = (P × i) / [1 - (1 + i)<sup>-n</sup>]</p>
 
-      <h4>Fórmula</h4>
-      <p class="formula">
-        R = (P × i) / [1 - (1 + i)<sup>-n</sup>]
-      </p>
+      <p>Ejemplo: Si se solicita un préstamo de $1200 al 2% mensual durante 4 meses:</p>
 
-      <h4>Ejemplo</h4>
-      <div class="ejemplo">
-        <p>
-          Si se solicita un préstamo de $1200 al 2% mensual durante 4 meses:
-        </p>
+      <p class="formula">R = (1200 × 0.02) / [1 - (1 + 0.02)<sup>-4</sup>]</p>
+      <p class="formula">R ≈ 315.18</p>
 
-        <p class="formula">
-          R = (1200 × 0.02) / [1 - (1 + 0.02)<sup>-4</sup>]
-        </p>
-
-        <p class="formula">
-          R ≈ 315.18
-        </p>
-
-        <p>
-          La cuota mensual será aproximadamente <strong>$315.18</strong>.
-        </p>
-      </div>
+      <p>La cuota mensual será aproximadamente <strong>$315.18</strong>.</p>
     </div>
 
-    <!-- Descripción de la Amortización Francesa -->
     <div class="card">
       <h3>Amortización Francesa</h3>
+      <p>Es un sistema donde las cuotas son iguales durante todo el préstamo.</p>
 
-      <h4>Concepto</h4>
-      <p>
-        Es un sistema donde las cuotas son iguales durante todo el préstamo.
-      </p>
-
-      <h4>Características</h4>
       <ul>
         <li>Cuotas constantes.</li>
         <li>Intereses decrecientes.</li>
         <li>Amortización creciente.</li>
       </ul>
 
-      <h4>Ejemplo</h4>
-      <div class="ejemplo">
-        <p>
-          Si la cuota fija es de $150, al inicio se paga más interés y menos capital:
-        </p>
+      <table>
+        <tr>
+          <th>Pago</th>
+          <th>Cuota</th>
+          <th>Interés</th>
+          <th>Capital</th>
+        </tr>
 
-        <table> <!--Tabla completa-->
-          <thead> <!--Encabezado-->
-            <tr>
-              <th>Pago</th>
-              <th>Cuota</th>
-              <th>Interés</th>
-              <th>Capital</th>
-            </tr>
-          </thead>
+        <tr>
+          <td>1</td>
+          <td>150</td>
+          <td>30</td>
+          <td>120</td>
+        </tr>
 
-          <tbody> <!--Cuerpo-->
-            <tr>
-              <td>1</td>
-              <td>150</td>
-              <td>30</td>
-              <td>120</td>
-            </tr>
+        <tr>
+          <td>2</td>
+          <td>150</td>
+          <td>25</td>
+          <td>125</td>
+        </tr>
 
-            <tr>
-              <td>2</td>
-              <td>150</td>
-              <td>25</td>
-              <td>125</td>
-            </tr>
+        <tr>
+          <td>3</td>
+          <td>150</td>
+          <td>20</td>
+          <td>130</td>
+        </tr>
+      </table>
 
-            <tr>
-              <td>3</td>
-              <td>150</td>
-              <td>20</td>
-              <td>130</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>
-          La cuota se mantiene igual, pero cada vez se paga menos interés y más capital.
-        </p>
-      </div>
+      <p>La cuota se mantiene igual, pero cada vez se paga menos interés y más capital.</p>
     </div>
 
-    <!-- Descripción de la Amortización Alemana -->
     <div class="card">
       <h3>Amortización Alemana</h3>
+      <p>Es un sistema donde el pago al capital es constante y las cuotas disminuyen con el tiempo.</p>
 
-      <h4>Concepto</h4>
-      <p>
-        Es un sistema donde el pago al capital es constante y las cuotas disminuyen con el tiempo.
-      </p>
-
-      <h4>Características</h4>
       <ul>
         <li>Capital fijo.</li>
         <li>Intereses decrecientes.</li>
         <li>Cuotas decrecientes.</li>
       </ul>
 
-      <h4>Ejemplo</h4>
-      <div class="ejemplo">
-        <p>
-          Si el pago fijo al capital es de $150, los intereses bajan en cada período:
-        </p>
+      <table>
+        <tr>
+          <th>Pago</th>
+          <th>Capital</th>
+          <th>Interés</th>
+          <th>Cuota</th>
+        </tr>
 
-        <table> <!--Tabla completa-->
-          <thead> <!--Encabezado-->
-            <tr>
-              <th>Pago</th>
-              <th>Capital</th>
-              <th>Interés</th>
-              <th>Cuota</th>
-            </tr>
-          </thead>
+        <tr>
+          <td>1</td>
+          <td>150</td>
+          <td>45</td>
+          <td>195</td>
+        </tr>
 
-          <tbody> <!--Cuerpo-->
-            <tr>
-              <td>1</td>
-              <td>150</td>
-              <td>45</td>
-              <td>195</td>
-            </tr>
+        <tr>
+          <td>2</td>
+          <td>150</td>
+          <td>36</td>
+          <td>186</td>
+        </tr>
 
-            <tr>
-              <td>2</td>
-              <td>150</td>
-              <td>36</td>
-              <td>186</td>
-            </tr>
+        <tr>
+          <td>3</td>
+          <td>150</td>
+          <td>27</td>
+          <td>177</td>
+        </tr>
+      </table>
 
-            <tr>
-              <td>3</td>
-              <td>150</td>
-              <td>27</td>
-              <td>177</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>
-          La cuota disminuye porque el capital pagado es fijo y los intereses bajan.
-        </p>
-      </div>
+      <p>La cuota disminuye porque el capital pagado es fijo y los intereses bajan.</p>
     </div>
 
-    <!-- Significados de las siglas -->
     <div class="card">
       <h3>Significado de las variables</h3>
 
@@ -376,149 +228,118 @@
     </div>
   </section>
 
-<!-- Sección del test de evaluacion de la Matematica Financiera -->
   <section id="test">
     <h2>Test de Evaluación</h2>
 
-    <!-- Pregunta 1 -->
     <div class="card">
       <p><strong>1. ¿Qué estudia la matemática financiera?</strong></p>
 
-      <label>
-        <input type="radio" name="p1" value="a">
-        El valor del dinero en el tiempo
-      </label>
-      
-      <label>
-        <input type="radio" name="p1" value="b">
-        Solo figuras geométricas
-      </label>
-
-      <label>
-        <input type="radio" name="p1" value="c">
-        La historia del comercio
-      </label>
+      <label><input type="radio" name="p1" id="p1a"> El valor del dinero en el tiempo</label>
+      <label><input type="radio" name="p1"> Solo figuras geométricas</label>
+      <label><input type="radio" name="p1"> La historia del comercio</label>
     </div>
 
-    <!-- Pregunta 2 -->
     <div class="card">
       <p><strong>2. ¿Qué calcula el valor presente?</strong></p>
 
-      <label>
-        <input type="radio" name="p2" value="a">
-        El valor actual de un dinero futuro
-      </label>
-
-      <label>
-        <input type="radio" name="p2" value="b">
-        El número de pagos realizados
-      </label>
-
-      <label>
-        <input type="radio" name="p2" value="c">
-        El dinero gastado en un día
-      </label>
+      <label><input type="radio" name="p2" id="p2a"> El valor actual de un dinero futuro</label>
+      <label><input type="radio" name="p2"> El número de pagos realizados</label>
+      <label><input type="radio" name="p2"> El dinero gastado en un día</label>
     </div>
 
-    <!-- Pregunta 3 -->
     <div class="card">
       <p><strong>3. ¿Sobre qué se calcula el interés simple?</strong></p>
 
-      <label>
-        <input type="radio" name="p3" value="a">
-        Sobre el capital inicial
-      </label>
-      
-      <label>
-        <input type="radio" name="p3" value="b">
-        Sobre los intereses acumulados
-      </label>
-
-      <label>
-        <input type="radio" name="p3" value="c">
-        Sobre el saldo final únicamente
-      </label>
+      <label><input type="radio" name="p3" id="p3a"> Sobre el capital inicial</label>
+      <label><input type="radio" name="p3"> Sobre los intereses acumulados</label>
+      <label><input type="radio" name="p3"> Sobre el saldo final únicamente</label>
     </div>
 
-    <!-- Pregunta 4 -->
     <div class="card">
       <p><strong>4. ¿Qué ocurre en el interés compuesto?</strong></p>
 
-      <label>
-        <input type="radio" name="p4" value="a">
-        Se generan intereses sobre intereses
-      </label>
-
-      <label>
-        <input type="radio" name="p4" value="b">
-        No se aplica tasa de interés
-      </label>
-
-      <label>
-        <input type="radio" name="p4" value="c">
-        El capital no cambia nunca
-      </label>
+      <label><input type="radio" name="p4" id="p4a"> Se generan intereses sobre intereses</label>
+      <label><input type="radio" name="p4"> No se aplica tasa de interés</label>
+      <label><input type="radio" name="p4"> El capital no cambia nunca</label>
     </div>
 
-    <!-- Pregunta 5 -->
     <div class="card">
       <p><strong>5. ¿Qué caracteriza a la amortización francesa?</strong></p>
 
-      <label>
-        <input type="radio" name="p5" value="a">
-        Cuotas constantes
-      </label>
-
-      <label>
-        <input type="radio" name="p5" value="b">
-        Cuotas siempre crecientes
-      </label>
-
-      <label>
-        <input type="radio" name="p5" value="c">
-        No se pagan intereses
-      </label>
-    </div>
-    <div style="text-align: center;">
-    <button onclick="calificarTest()">Calificar test</button>
+      <label><input type="radio" name="p5" id="p5a"> Cuotas constantes</label>
+      <label><input type="radio" name="p5"> Cuotas siempre crecientes</label>
+      <label><input type="radio" name="p5"> No se pagan intereses</label>
     </div>
 
-    <p id="resultadoTest" style="visibility: hidden;"></p>
+    <div class="centrar">
+      <button onclick="calificarTest()">Calificar test</button>
+    </div>
+
+    <p id="resultadoTest"></p>
   </section>
 
-<!-- Sección de la informacion sobre los integrantes -->
+  <section id="aplicacionPractica">
+    <h2>Aplicación Práctica</h2>
+
+    <div class="card">
+      <h3>Opciones de aplicación</h3>
+
+      <button onclick="mostrarValorPresente()">Valor Presente</button>
+      <button onclick="mostrarInteresSimple()">Interés Simple</button>
+      <button onclick="mostrarInteresCompuesto()">Interés Compuesto</button>
+    </div>
+
+    <div id="appValorPresente" class="card">
+      <h3>Aplicación de Valor Presente</h3>
+      <p>Sirve para conocer cuánto vale hoy una cantidad de dinero que se recibirá en el futuro.</p>
+
+      <p class="formula">VP = VF / (1 + i)<sup>n</sup></p>
+
+      <p>Ejemplo: Si recibirás $1331 en 3 años al 10%, hoy equivale a $1000.</p>
+    </div>
+
+    <div id="appInteresSimple" class="card">
+      <h3>Aplicación de Interés Simple</h3>
+      <p>Sirve para calcular el interés de un préstamo cuando solo se toma en cuenta el capital inicial.</p>
+
+      <p class="formula">I = C × i × t</p>
+
+      <p>Ejemplo: $1500 al 6% durante 4 años genera $360 de interés.</p>
+    </div>
+
+    <div id="appInteresCompuesto" class="card">
+      <h3>Aplicación de Interés Compuesto</h3>
+      <p>Sirve para calcular el crecimiento del dinero cuando los intereses también generan intereses.</p>
+
+      <p class="formula">M = C(1 + i)<sup>n</sup></p>
+
+      <p>Ejemplo: $2000 al 5% durante 3 años se convierte en $2315.25.</p>
+    </div>
+  </section>
+
   <section id="acercaProyecto">
     <h2>Acerca del Proyecto</h2>
 
     <div class="card">
       <h3>Información del proyecto</h3>
 
-      <p>
-        <strong>Nombre del proyecto:</strong> Página de estudio sobre Matemática Financiera
-      </p>
+      <p><strong>Nombre del proyecto:</strong> Página de estudio sobre Matemática Financiera</p>
 
-      <p>
-        <strong>Fundamento matemático:</strong> Matemática financiera
-      </p>
+      <p><strong>Fundamento matemático:</strong> Matemática financiera</p>
 
       <p>
         <strong>Objetivo:</strong>
-        Crear una página web educativa que permita estudiar conceptos financieros básicos
-        mediante explicaciones, fórmulas, ejemplos y un test de evaluación.
+        Crear una página web educativa que permita estudiar conceptos financieros básicos.
       </p>
 
-      <p>
-        <strong>Integrantes:</strong>
-      </p>
+      <p><strong>Integrantes:</strong></p>
 
       <ul>
         <li>Cesar Amaguaña</li>
         <li>Luis Macias</li>
       </ul>
 
-      <p>
-        <strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript y GitHub.
-      </p>
+      <p><strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript y GitHub.</p>
     </div>
   </section>
 

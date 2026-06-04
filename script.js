@@ -1,57 +1,102 @@
-function ocultarSecciones() {
-    document.getElementById("inicio").classList.remove("activa");
-    document.getElementById("conceptosBasicos").classList.remove("activa");
-    document.getElementById("test").classList.remove("activa");
-    document.getElementById("acercaProyecto").classList.remove("activa");
+function ocultarTodo() {
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("conceptosBasicos").style.display = "none";
+    document.getElementById("test").style.display = "none";
+
+    
+    document.getElementById("aplicacionPractica").style.display = "none";
+
+    document.getElementById("acercaProyecto").style.display = "none";
 }
 
-function mostrarSeccion(id) {
-    ocultarSecciones();
+function mostrarInicio() {
+    ocultarTodo();
+    document.getElementById("inicio").style.display = "block";
+}
 
-    document.getElementById(id).classList.add("activa");
+function mostrarConceptos() {
+    ocultarTodo();
+    document.getElementById("conceptosBasicos").style.display = "block";
+}
+
+function mostrarTest() {
+    ocultarTodo();
+    document.getElementById("test").style.display = "block";
+}
+
+function mostrarAplicacion() {
+    ocultarTodo();
+    document.getElementById("aplicacionPractica").style.display = "block";
+
+    document.getElementById("appValorPresente").style.display = "none";
+    document.getElementById("appInteresSimple").style.display = "none";
+    document.getElementById("appInteresCompuesto").style.display = "none";
+}
+
+function mostrarAcerca() {
+    ocultarTodo();
+    document.getElementById("acercaProyecto").style.display = "block";
+}
+
+function ocultarAplicaciones() {
+    document.getElementById("appValorPresente").style.display = "none";
+    document.getElementById("appInteresSimple").style.display = "none";
+    document.getElementById("appInteresCompuesto").style.display = "none";
+}
+
+function mostrarValorPresente() {
+    ocultarAplicaciones();
+    document.getElementById("appValorPresente").style.display = "block";
+}
+
+function mostrarInteresSimple() {
+    ocultarAplicaciones();
+    document.getElementById("appInteresSimple").style.display = "block";
+}
+
+function mostrarInteresCompuesto() {
+    ocultarAplicaciones();
+    document.getElementById("appInteresCompuesto").style.display = "block";
 }
 
 function calificarTest() {
     let puntaje = 0;
 
-    let p1 = document.querySelector('input[name="p1"]:checked');
-    let p2 = document.querySelector('input[name="p2"]:checked');
-    let p3 = document.querySelector('input[name="p3"]:checked');
-    let p4 = document.querySelector('input[name="p4"]:checked');
-    let p5 = document.querySelector('input[name="p5"]:checked');
+    let respuesta1 = document.getElementById("p1a");
+    let respuesta2 = document.getElementById("p2a");
+    let respuesta3 = document.getElementById("p3a");
+    let respuesta4 = document.getElementById("p4a");
+    let respuesta5 = document.getElementById("p5a");
 
-    if (p1 != null && p1.value == "a") {
-        puntaje++;
+    if (respuesta1.checked == true) {
+        puntaje = puntaje + 1;
     }
 
-    if (p2 != null && p2.value == "a") {
-        puntaje++;
+    if (respuesta2.checked == true) {
+        puntaje = puntaje + 1;
     }
 
-    if (p3 != null && p3.value == "a") {
-        puntaje++;
+    if (respuesta3.checked == true) {
+        puntaje = puntaje + 1;
     }
 
-    if (p4 != null && p4.value == "a") {
-        puntaje++;
+    if (respuesta4.checked == true) {
+        puntaje = puntaje + 1;
     }
 
-    if (p5 != null && p5.value == "a") {
-        puntaje++;
+    if (respuesta5.checked == true) {
+        puntaje = puntaje + 1;
     }
 
-    mostrarResultado(puntaje);
-}
-
-function mostrarResultado(puntaje) {
     let resultado = document.getElementById("resultadoTest");
-    resultado.style.visibility = "visible";
 
     if (puntaje == 5) {
         resultado.innerHTML = "Tu puntaje es: " + puntaje + " de 5. Excelente.";
-    } else if (puntaje >= 3) {
-        resultado.innerHTML = "Tu puntaje es: " + puntaje + " de 5. Buen resultado.";
     } else {
-        resultado.innerHTML = "Tu puntaje es: " + puntaje + " de 5. Debes repasar los conceptos.";
+        if (puntaje >= 3) {
+            resultado.innerHTML = "Tu puntaje es: " + puntaje + " de 5. Buen resultado.";
+        } else {
+            resultado.innerHTML = "Tu puntaje es: " + puntaje + " de 5. Debes repasar los conceptos.";
+        }
     }
 }
