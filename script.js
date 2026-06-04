@@ -3,7 +3,7 @@ function ocultarTodo() {
     document.getElementById("conceptosBasicos").style.display = "none";
     document.getElementById("test").style.display = "none";
 
-    
+    //apartado aplicacionPractica
     document.getElementById("aplicacionPractica").style.display = "none";
 
     document.getElementById("acercaProyecto").style.display = "none";
@@ -24,13 +24,14 @@ function mostrarTest() {
     document.getElementById("test").style.display = "block";
 }
 
+//Aplicacion Practica
 function mostrarAplicacion() {
     ocultarTodo();
     document.getElementById("aplicacionPractica").style.display = "block";
 
-    document.getElementById("appValorPresente").style.display = "none";
-    document.getElementById("appInteresSimple").style.display = "none";
-    document.getElementById("appInteresCompuesto").style.display = "none";
+    document.getElementById("btnClientes").style.display = "none";
+    document.getElementById("btnSimularCreditos").style.display = "none";
+    document.getElementById("btnPagos").style.display = "none";
 }
 
 function mostrarAcerca() {
@@ -39,24 +40,24 @@ function mostrarAcerca() {
 }
 
 function ocultarAplicaciones() {
-    document.getElementById("appValorPresente").style.display = "none";
-    document.getElementById("appInteresSimple").style.display = "none";
-    document.getElementById("appInteresCompuesto").style.display = "none";
+    document.getElementById("btnClientes").style.display = "none";
+    document.getElementById("btnSimularCreditos").style.display = "none";
+    document.getElementById("btnPagos").style.display = "none";
 }
 
-function mostrarValorPresente() {
+function mostrarClientes() {
     ocultarAplicaciones();
-    document.getElementById("appValorPresente").style.display = "block";
+    document.getElementById("btnClientes").style.display = "block";
 }
 
-function mostrarInteresSimple() {
+function mostrarSimularCreditos() {
     ocultarAplicaciones();
-    document.getElementById("appInteresSimple").style.display = "block";
+    document.getElementById("btnSimularCreditos").style.display = "block";
 }
 
-function mostrarInteresCompuesto() {
+function mostrarPagos() {
     ocultarAplicaciones();
-    document.getElementById("appInteresCompuesto").style.display = "block";
+    document.getElementById("btnPagos").style.display = "block";
 }
 
 function calificarTest() {
