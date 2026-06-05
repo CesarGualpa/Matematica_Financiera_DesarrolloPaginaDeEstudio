@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+<header>
+  <h1>Matemática Financiera</h1>
+  <p>Página de estudio sobre fundamentos matemáticos aplicados a las finanzas</p>
+</header>
+
+<nav>
+  <a href="../index.html">Inicio</a>
+  <a href="01-conceptos.html">Conceptos Básicos</a>
+  <a href="02-test.html">Test</a>
+  <a href="03-aplicacion.html">Aplicación Práctica</a>
+  <a href="04-acerca.html">Acerca del Proyecto</a>
+</nav>
+
+<main>
+  <h2>Test de Evaluación</h2>
+
+  <div class="card">
+    <p><strong>1. ¿Qué estudia la matemática financiera?</strong></p>
+
+    <label>
+      <input type="radio" name="p1" id="p1a">
+      El valor del dinero en el tiempo
+    </label>
+    
+    <label>
+      <input type="radio" name="p1" id="p1a">
+      Solo figuras geométricas
+    </label>
+
+    <label>
+      <input type="radio" name="p1" id="p1a">
+      La historia del comercio
+    </label>
+  </div>
+
+  <div class="card">
+    <p><strong>2. ¿Qué calcula el valor presente?</strong></p>
+
+    <label>
+      <input type="radio" name="p2" id="p2a">
+      El valor actual de un dinero futuro
+    </label>
+
+    <label>
+      <input type="radio" name="p2" id="p2a">
+      El número de pagos realizados
+    </label>
+
+    <label>
+      <input type="radio" name="p2" id="p2a">
+      El dinero gastado en un día
+    </label>
+  </div>
+
+  <div class="card">
+    <p><strong>3. ¿Sobre qué se calcula el interés simple?</strong></p>
+
+    <label>
+      <input type="radio" name="p3" id="p3a">
+      Sobre el capital inicial
+    </label>
+    
+    <label>
+      <input type="radio" name="p3" id="p3a">
+      Sobre los intereses acumulados
+    </label>
+
+    <label>
+      <input type="radio" name="p3" id="p3a">
+      Sobre el saldo final únicamente
+    </label>
+  </div>
+
+  <div class="card">
+    <p><strong>4. ¿Qué ocurre en el interés compuesto?</strong></p>
+
+    <label>
+      <input type="radio" name="p4" id="p4a">
+      Se generan intereses sobre intereses
+    </label>
+
+    <label>
+      <input type="radio" name="p4" id="p4a">
+      No se aplica tasa de interés
+    </label>
+
+    <label>
+      <input type="radio" name="p4" id="p4a">
+      El capital no cambia nunca
+    </label>
+  </div>
+
+  <div class="card">
+    <p><strong>5. ¿Qué caracteriza a la amortización francesa?</strong></p>
+
+    <label>
+      <input type="radio" name="p5" id="p5a">
+      Cuotas constantes
+    </label>
+
+    <label>
+      <input type="radio" name="p5" id="p5a">
+      Cuotas siempre crecientes
+    </label>
+
+    <label>
+      <input type="radio" name="p5" id="p5a">
+      No se pagan intereses
+    </label>
+  </div>
+
+  <div class="centrar">
+    <button onclick="calificarTest()">Calificar test</button>
+  </div>
+
+  <p id="resultadoTest"></p>
+</main>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
