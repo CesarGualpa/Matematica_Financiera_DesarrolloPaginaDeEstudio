@@ -112,6 +112,55 @@
 
   <section id="pagos" class="card">
     <h3>Pagos</h3>
+
+  <p>En esta sección se pueden registrar los pagos realizados por los clientes.</p>
+
+  <label for="clientePago">Seleccionar cliente</label>
+  <select id="clientePago" onchange="cargarCreditosEnSelect()">
+    <option value="">Seleccione un cliente</option>
+  </select>
+
+  <label for="creditoPago">Seleccionar crédito</label>
+  <select id="creditoPago" onchange="cargarCuotasEnSelect()">
+    <option value="">Seleccione un crédito</option>
+  </select>
+
+  <label for="cuotaPago">Seleccionar número de cuota</label>
+  <select id="cuotaPago">
+    <option value="">Seleccione una cuota</option>
+  </select>
+
+  <label for="fechaPago">Fecha de pago</label>
+  <input type="date" id="fechaPago">
+
+  <label for="estadoPago">Estado del pago</label>
+  <select id="estadoPago">
+    <option value="">Seleccione un estado</option>
+    <option value="Pendiente">Pendiente</option>
+    <option value="Pagado">Pagado</option>
+    <option value="Atrasado">Atrasado</option>
+    <option value="Cancelado">Cancelado</option>
+  </select>
+
+  <button onclick="registrarPago()">Registrar Pago</button>
+
+  <h3>Pagos Registrados</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Crédito</th>
+        <th>N° cuota</th>
+        <th>Fecha de pago</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+
+    <tbody id="tablaPagos">
+
+    </tbody>
+  </table>
   </section>
 
   <section id="parametros" class="card">
