@@ -23,12 +23,57 @@
 <main>
   <h2>Aplicación Práctica</h2>
 
-  <div class="card">
-    <p>
-      En esta sección se colocará la aplicación práctica de matemática financiera.
-    </p>
-  </div>
+  <section id="clientes" class="card">
+    <h3>Clientes</h3>
+
+    <p>Registro de clientes para el sistema de creditos.</p>
+
+    <label for="nombreCliente">Nombre</label>
+    <input type="text" id="nombreCliente" placeholder="Ingrese el nombre">
+
+    <label for="cedulaCliente">Cedula</label>
+    <input type="text" id="cedulaCliente" placeholder="Ingrese la cedula">
+
+    <label for="telefonoCliente">Telefono</label>
+    <input type="text" id="telefonoCliente" placeholder="Ingrese el telefono">
+
+    <label for="correoCliente">Correo</label>
+    <input type="email" id="correoCliente" placeholder="Ingrese el correo">
+
+    <button onclick="guardarCliente()">Guardar Cliente</button>
+
+    <h3>Clientes Registrados</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cedula</th>
+          <th>Telefono</th>
+          <th>Correo</th>
+        </tr>
+      </thead>
+
+      <tbody id="tablaClientes">
+        
+      </tbody>
+    </table>
+  </section>
+
+  <section id="simular" class="card">
+    <h3>Simular Créditos</h3>
+  </section>
+
+  <section id="pagos" class="card">
+    <h3>Pagos</h3>
+  </section>
+
+  <section id="parametros" class="card">
+    <h3>Parametros</h3>
+  </section>
+
 </main>
 
+<script src="../js/aplicacion.js"></script>
 </body>
 </html>
