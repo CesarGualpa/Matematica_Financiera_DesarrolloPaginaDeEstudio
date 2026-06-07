@@ -153,3 +153,13 @@ button:hover {
 .centrar {
   text-align: center;
 }
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 15px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
