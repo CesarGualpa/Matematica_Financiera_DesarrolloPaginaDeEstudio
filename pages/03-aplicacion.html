@@ -21,26 +21,30 @@
 </nav>
 
 <main>
-  <h2>Aplicación Práctica</h2>
 
-  <section id="clientes" class="card">
-    <h3>Clientes</h3>
+  <section>
 
-    <p>Registro de clientes para el sistema de creditos.</p>
+    <h2>Registro de Clientes</h2>
 
-    <label for="nombreCliente">Nombre</label>
-    <input type="text" id="nombreCliente" placeholder="Ingrese el nombre">
+    <h3>Datos del Cliente</h3>
 
-    <label for="cedulaCliente">Cedula</label>
-    <input type="text" id="cedulaCliente" placeholder="Ingrese la cedula">
+    <label for="nombreCliente">Nombre:</label>
+    <input type="text" id="nombreCliente">
+    <br><br>
 
-    <label for="telefonoCliente">Telefono</label>
-    <input type="text" id="telefonoCliente" placeholder="Ingrese el telefono">
+    <label for="cedulaCliente">Cedula:</label>
+    <input type="text" id="cedulaCliente">
+    <br><br>
 
-    <label for="correoCliente">Correo</label>
-    <input type="email" id="correoCliente" placeholder="Ingrese el correo">
+    <label for="telefonoCliente">Telefono:</label>
+    <input type="text" id="telefonoCliente">
+    <br><br>
 
-    <button onclick="guardarCliente()">Guardar Cliente</button>
+    <label for="correoCliente">Correo:</label>
+    <input type="email" id="correoCliente">
+    <br><br>
+
+    <button onclick="registrarCliente()">Registrar Cliente</button>
 
     <h3>Clientes Registrados</h3>
 
@@ -53,122 +57,70 @@
           <th>Correo</th>
         </tr>
       </thead>
-
       <tbody id="tablaClientes">
-        
       </tbody>
     </table>
+
   </section>
 
-  <section id="simular" class="card">
-    <h3>Simular Créditos</h3>
+  <section id="simularCredito">
+    <h2>Simular Credito</h2>
 
-  <p>En esta sección se puede simular un crédito para un cliente registrado.</p>
+    <h3>Datos del credito</h3>
 
-  <label for="clienteCredito">Seleccionar cliente</label>
-  <select id="clienteCredito">
-    <option value="">Seleccione un cliente</option>
-  </select>
+    <label>Cliente:</label>
+    <select id="ClienteCredito">
+      <option value="">Selecione un cliente</option>
+    </select>
+    <br><br>
 
-  <label for="montoCredito">Monto solicitado</label>
-  <input type="number" id="montoCredito" placeholder="Ejemplo: 5000">
+    <label>Monto solicitado:</label>
+    <input type="number" id="montoCredito">
+    <br><br>
 
-  <label for="plazoCredito">Plazo en meses</label>
-  <input type="number" id="plazoCredito" placeholder="Ejemplo: 12">
+    <label>Plazo en meses:</label>
+    <input type="number" id="plazoCredito">
+    <br><br>
 
-  <label for="tasaCredito">Tasa de interés anual (%)</label>
-  <input type="number" id="tasaCredito" placeholder="Ejemplo: 15">
+    <label>Tasa de interes anual:</label>
+    <input type="number" id="tasaCredito">
+    <br><br>
 
-  <label for="tipoAmortizacion">Tipo de amortización</label>
-  <select id="tipoAmortizacion">
-    <option value="">Seleccione un tipo</option>
-    <option value="frances">Sistema Francés</option>
-    <option value="aleman">Sistema Alemán</option>
-  </select>
+    <label>Tipo de amortizacion</label>
 
-  <button onclick="calcularCredito()">Calcular Crédito</button>
+    <input type="radio" name="tipoAmortizacion" value="frances" checked>
+    <label>Frances</label>
 
-  <div id="resumenCredito"></div>
+    <input type="radio" name="tipoAmortizacion" value="aleman">
+    <label>Aleman</label>
 
-  <h3>Tabla de Amortización</h3>
+    <button onclick="">Calcular credito</button>
 
-  <table>
-    <thead>
-      <tr>
-        <th>N° cuota</th>
-        <th>Fecha de pago</th>
-        <th>Capital</th>
-        <th>Interés</th>
-        <th>Total cuota</th>
-        <th>Saldo restante</th>
-      </tr>
-    </thead>
+    <div id="resumenCredito">
+    </div>
 
-    <tbody id="tablaAmortizacion">
+    <h3>Tabla de amortizacion</h3>
 
-    </tbody>
-  </table>
-  </section>
+    <table>
+      <thead>
+        <tr>
+          <th>N° cuota</th>
+          <th>Fecha de pago</th>
+          <th>Capital</th>
+          <th>Interes</th>
+          <th>Total cuota</th>
+          <th>Saldo restante</th>
+        </tr>
+      </thead>
 
-  <section id="pagos" class="card">
-    <h3>Pagos</h3>
+      <tbody id="tablaAmortizacion">
+      </tbody>
+    </table>
 
-  <p>En esta sección se pueden registrar los pagos realizados por los clientes.</p>
-
-  <label for="clientePago">Seleccionar cliente</label>
-  <select id="clientePago" onchange="cargarCreditosEnSelect()">
-    <option value="">Seleccione un cliente</option>
-  </select>
-
-  <label for="creditoPago">Seleccionar crédito</label>
-  <select id="creditoPago" onchange="cargarCuotasEnSelect()">
-    <option value="">Seleccione un crédito</option>
-  </select>
-
-  <label for="cuotaPago">Seleccionar número de cuota</label>
-  <select id="cuotaPago">
-    <option value="">Seleccione una cuota</option>
-  </select>
-
-  <label for="fechaPago">Fecha de pago</label>
-  <input type="date" id="fechaPago">
-
-  <label for="estadoPago">Estado del pago</label>
-  <select id="estadoPago">
-    <option value="">Seleccione un estado</option>
-    <option value="Pendiente">Pendiente</option>
-    <option value="Pagado">Pagado</option>
-    <option value="Atrasado">Atrasado</option>
-    <option value="Cancelado">Cancelado</option>
-  </select>
-
-  <button onclick="registrarPago()">Registrar Pago</button>
-
-  <h3>Pagos Registrados</h3>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Cliente</th>
-        <th>Crédito</th>
-        <th>N° cuota</th>
-        <th>Fecha de pago</th>
-        <th>Estado</th>
-      </tr>
-    </thead>
-
-    <tbody id="tablaPagos">
-
-    </tbody>
-  </table>
-  </section>
-
-  <section id="parametros" class="card">
-    <h3>Parametros</h3>
   </section>
 
 </main>
 
-<script src="../js/aplicacion.js"></script>
+<script src="../js/registroClientes.js" src="../js/simularCredito.js"></script>
 </body>
 </html>
