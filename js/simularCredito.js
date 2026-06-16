@@ -33,5 +33,51 @@ function calcularCredito(){
 }
 
 function calcularSistemaFrances(posicionCliente, monto, plazo, tasa, interesMensual){
-    let 
+    let cliente = datosDeLosClientes[posicionCliente];
+    let resumen = document.getElementById("resumenCredito");
+    let tabla = document.getElementById("tablaAmortizacion");
+
+    let saldo = monto;
+
+    let cuotaMensual = monto * (interesMensual * Math.pow(1 + interesMensual, plazo)) / (Math.pow(1 + interesMensual, plazo) - 1); 
+
+    resumen.innerHTML = `
+        <h3>Resumen del credito</h3>
+        <p><strong>Cliente:</strong> ${cliente.nombre}</p>
+        <p><strong>Monto solicitado:</strong> $${monto.toFixed(2)}</p>
+        <p><strong>Plazo:</strong> ${plazo} meses</p>
+        <p><strong>Tasa anual:</strong> ${tasa}%</p>
+        <p><strong>Tipo de amortizacion:</strong> Sistema Frances</p>
+        <p><strong>Cuota mensual aproximada:</strong> $${cuotaMensual.toFixed(2)}</p>
+    `;
+
+    tabla.innerHTML = "";
+
+    for(let i = 1; i <= plazo; i++){
+        let interes = saldo * interesMensual;
+        let capital = cuotaMensual - interes;
+
+        if(capital > saldo){
+            capital = saldo;
+        }
+
+        let totalCuota = capital + interes;
+
+        saldo = saldo - capital;
+
+        if(saldo < 0.01){
+            saldo = 0;
+        }
+
+        tabla.innerHTML +=`
+            <tr>
+                <td>${i}</td>
+                <td>${obtenerFechaPago(i)}</td>
+                <td>$${capital.toFixed(2)}</td>
+                <td>$${interes.toFixed(2)}</td>
+                <td>$${totalCuota.toFixed(2)}</td>
+                <td>$${saldo.toFixed(2)}</td>
+            </tr>
+        `;
+    }
 }
