@@ -81,3 +81,46 @@ function calcularSistemaFrances(posicionCliente, monto, plazo, tasa, interesMens
         `;
     }
 }
+
+function calcularSistemaAleman(posicionCliente, monto, plazo, tasa, interesMensual) {
+    let cliente = datosDeLosClientes[posicionCliente];
+    let resumen = document.getElementById("resumenCredito");
+    let tabla = document.getElementById("tablaAmortizacion");
+
+    let saldo = monto;
+    let capitalFijo = monto / plazo;
+
+    resumen.innerHTML = `
+        <h3>Resumen del crédito</h3>
+        <p><strong>Cliente:</strong> ${cliente.nombre}</p>
+        <p><strong>Monto solicitado:</strong> $${monto.toFixed(2)}</p>
+        <p><strong>Plazo:</strong> ${plazo} meses</p>
+        <p><strong>Tasa anual:</strong> ${tasa}%</p>
+        <p><strong>Tipo de amortización:</strong> Sistema Alemán</p>
+        <p><strong>Capital fijo mensual:</strong> $${capitalFijo.toFixed(2)}</p>
+    `;
+
+    tabla.innerHTML = "";
+
+    for (let i = 1; i <= plazo; i++) {
+        let interes = saldo * interesMensual;
+        let totalCuota = capitalFijo + interes;
+
+        saldo = saldo - capitalFijo;
+
+        if (saldo < 0.01) {
+            saldo = 0;
+        }
+
+        tabla.innerHTML += `
+            <tr>
+                <td>${i}</td>
+                <td>${obtenerFechaPago(i)}</td>
+                <td>$${capitalFijo.toFixed(2)}</td>
+                <td>$${interes.toFixed(2)}</td>
+                <td>$${totalCuota.toFixed(2)}</td>
+                <td>$${saldo.toFixed(2)}</td>
+            </tr>
+        `;
+    }
+}
