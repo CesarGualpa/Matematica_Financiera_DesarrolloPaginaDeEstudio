@@ -31,3 +31,7 @@ function calcularCredito(){
         calcularSistemaAleman(posicionCliente, monto, plazo, tasa, interesMensual);
     }
 }
+
+function calcularSistemaFrances(posicionCliente, monto, plazo, tasa, interesMensual){
+    let 
+}
