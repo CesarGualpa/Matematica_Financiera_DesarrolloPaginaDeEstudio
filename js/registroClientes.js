@@ -22,6 +22,8 @@ function registrarCliente(){
 
     mostrarClientesTabla();
 
+    cargarClientesCredito();
+
     limpiarFormulario();
 
     alert("Cliente registrado correctamente <3");
