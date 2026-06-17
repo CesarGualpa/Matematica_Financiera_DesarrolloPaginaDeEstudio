@@ -43,9 +43,9 @@
     <label for="correoCliente">Correo:</label>
     <input type="email" id="correoCliente">
     <br><br>
-
+    <div class="button-group">
     <button onclick="registrarCliente()">Registrar Cliente</button>
-
+    </div>
     <h3>Clientes Registrados</h3>
 
     <table>
@@ -58,6 +58,10 @@
         </tr>
       </thead>
       <tbody id="tablaClientes">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tbody>
     </table>
 
@@ -88,13 +92,15 @@
 
     <label>Tipo de amortizacion</label>
 
+    <label class="label-type">Frances</label>
     <input type="radio" name="tipoAmortizacion" value="frances" checked>
-    <label>Frances</label>
 
+    <label class="label-type">Aleman</label>
     <input type="radio" name="tipoAmortizacion" value="aleman">
-    <label>Aleman</label>
 
+    <div class="button-group">
     <button onclick="calcularCredito()">Calcular credito</button>
+    </div>
 
     <div id="resumenCredito">
     </div>
@@ -114,6 +120,12 @@
       </thead>
 
       <tbody id="tablaAmortizacion">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tbody>
     </table>
 

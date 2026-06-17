@@ -1,3 +1,196 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eef4f8;
+  margin: 0;
+  padding: 0;
+  color: #1f2933;
+}
+
+header {
+  background-color: #0f2f4a;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+nav {
+  background-color: #123d5c;
+  text-align: center;
+  padding: 15px;
+}
+
+nav a {
+  background-color: #1f8f5f;
+  color: white;
+  text-decoration: none;
+  padding: 10px 14px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: #166b48;
+}
+
+main {
+  padding: 30px 20px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  color: #0f2f4a;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.card {
+  background-color: white;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+}
+
+.card h3 {
+  color: #123d5c;
+  margin-top: 15px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.card ul {
+  line-height: 1.8;
+}
+
+.formula {
+  background-color: #e8f5ef;
+  border-left: 5px solid #1f8f5f;
+  padding: 15px;
+  margin: 15px 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ejemplo {
+  background-color: #f7fafc;
+  border-left: 5px solid #0f2f4a;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+}
+
+th {
+  background-color: #0f2f4a;
+  color: white;
+  padding: 12px;
+}
+
+td {
+  border: 1px solid #d1d5db;
+  padding: 10px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+#resultadoTest {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #e8f5ef;
+  border-left: 5px solid #1f8f5f;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+button {
+  background-color: #1f8f5f;
+  color: white;
+  border: none;
+  padding: 11px 16px;
+  margin: 8px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #166b48;
+}
+
+.centrar {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 15px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 15px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.resumen {
+  background-color: #e8f5ef;
+  border-left: 5px solid #1f8f5f;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.resumen h3 {
+  margin-top: 0;
+}
+
+.resumen p {
+  margin: 8px 0;
+}
 body { 
   font-family: Arial, sans-serif; 
   background-color: #eef4f8; 
@@ -133,6 +326,10 @@ nav a:hover {
     font-size: 18px; 
   }
 
+  .button-group {
+    text-align: center;
+  }
+
   button { 
     background-color: #1f8f5f; 
     color: white; 
@@ -150,4 +347,8 @@ nav a:hover {
 
   .centrar { 
     text-align: center; 
+  }
+
+  .label-type{
+    text-align: center;
   }
