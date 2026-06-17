@@ -1,4 +1,9 @@
-let datosDeLosClientes = [];
+let datosDeLosClientes = [
+{nombre: "Gabriel", cedula: "1312345678", telefono: "0987654321", correo: "gabr@gmail.com"},
+{nombre: "Luis", cedula: "1309876543", telefono: "0991234567", correo: "luis@gmail.com"},
+{nombre: "Jessica", cedula: "1723456789", telefono: "0965432109", correo: "jussica@gmail.com"},
+{nombre: "Andy", cedula: "1004567890", telefono: "0976543210", correo: "andyon@gmail.com"}
+];
 
 function registrarCliente(){
     let nombre = document.getElementById("nombreCliente").value;
