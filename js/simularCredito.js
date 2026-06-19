@@ -1,16 +1,16 @@
-function cargarClientesCredito() {
+function cargarClientesCredito(){
     let seleccionarCliente = document.getElementById("clienteCredito");
 
     seleccionarCliente.innerHTML = `<option value="">Seleccione un cliente</option>`;
 
-    for (let i = 0; i < datosDeLosClientes.length; i++) {
+    for (let i = 0; i < datosDeLosClientes.length; i++){
         seleccionarCliente.innerHTML += `
             <option value="${i}">${datosDeLosClientes[i].nombre}</option>
         `;
     }
 }
 
-function calcularCredito() {
+function calcularCredito(){
     let posicionCliente = document.getElementById("clienteCredito").value;
     let monto = Number(document.getElementById("montoCredito").value);
     let plazo = Number(document.getElementById("plazoCredito").value);
@@ -18,16 +18,16 @@ function calcularCredito() {
 
     let tipoAmortizacion = document.querySelector(`input[name="tipoAmortizacion"]:checked`).value;
 
-    if (posicionCliente == "" || monto <= 0 || plazo <= 0 || tasa <= 0) {
+    if(posicionCliente == "" || monto <= 0 || plazo <= 0 || tasa <=0){
         alert("Debe llenar todos los datos correctamente");
         return;
     }
 
     let interesMensual = tasa / 100 / 12;
 
-    if (tipoAmortizacion == "frances") {
+    if(tipoAmortizacion == "frances"){
         calcularSistemaFrances(posicionCliente, monto, plazo, tasa, interesMensual);
-    } else {
+    }else{
         calcularSistemaAleman(posicionCliente, monto, plazo, tasa, interesMensual);
     }
 }
@@ -145,26 +145,6 @@ function calcularSistemaAleman(posicionCliente, monto, plazo, tasa, interesMensu
     comprobarCuotasAtrasadas();
 }
 
-function obtenerFechaPago(numeroCuota) {
-    let fecha = new Date();
-
-    fecha.setMonth(fecha.getMonth() + numeroCuota);
-
-    let dia = fecha.getDate();
-    let mes = fecha.getMonth() + 1;
-    let anio = fecha.getFullYear();
-
-    if (dia < 10) {
-        dia = "0" + dia;
-    }
-
-    if (mes < 10) {
-        mes = "0" + mes;
-    }
-
-    return dia + "/" + mes + "/" + anio;
-}
-
 function pagarCuota(numeroCuota) {
     let fila = document.getElementById("filaCuota" + numeroCuota);
     let estado = document.getElementById("estadoCuota" + numeroCuota);
@@ -213,6 +193,26 @@ function comprobarCuotasAtrasadas() {
     }
 }
 
+function obtenerFechaPago(numeroCuota) {
+    let fecha = new Date();
+
+    fecha.setMonth(fecha.getMonth() + numeroCuota);
+
+    let dia = fecha.getDate();
+    let mes = fecha.getMonth() + 1;
+    let anio = fecha.getFullYear();
+
+    if (dia < 10) {
+        dia = "0" + dia;
+    }
+
+    if (mes < 10) {
+        mes = "0" + mes;
+    }
+
+    return dia + "/" + mes + "/" + anio;
+}
+
 function convertirTextoAFecha(fechaTexto) {
     let partes = fechaTexto.split("/");
 
@@ -225,4 +225,49 @@ function convertirTextoAFecha(fechaTexto) {
     fecha.setHours(0, 0, 0, 0);
 
     return fecha;
+}
+
+function obtenerFechaActual() {
+    let fechaSeleccionada = document.getElementById("fechaPrueba").value;
+
+    if (fechaSeleccionada) {
+        let fecha = new Date(fechaSeleccionada);
+        fecha.setHours(0, 0, 0, 0);
+        return fecha;
+    }
+
+    let hoy = obtenerFechaActual();
+    return hoy;
+}
+
+function comprobarCuotasAtrasadas() {
+    let filas = document.querySelectorAll("#tablaAmortizacion tr");
+
+    let hoy = obtenerFechaActual();
+
+    for (let i = 0; i < filas.length; i++) {
+        let fila = filas[i];
+
+        let numeroCuota = fila.children[0].innerHTML;
+        let fechaTexto = fila.getAttribute("data-fecha");
+        let fechaPago = convertirTextoAFecha(fechaTexto);
+
+        let estado = document.getElementById("estadoCuota" + numeroCuota);
+
+        if (estado.innerHTML == "Pagado") {
+            continue;
+        }
+
+        if (fechaPago < hoy) {
+            estado.innerHTML = "Atrasado";
+
+            fila.classList.remove("cuota-pendiente");
+            fila.classList.add("cuota-atrasada");
+        } else {
+            estado.innerHTML = "Pendiente";
+
+            fila.classList.remove("cuota-atrasada");
+            fila.classList.add("cuota-pendiente");
+        }
+    }
 }
