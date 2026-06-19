@@ -43,9 +43,11 @@
     <label for="correoCliente">Correo:</label>
     <input type="email" id="correoCliente">
     <br><br>
+
     <div class="button-group">
-    <button onclick="registrarCliente()">Registrar Cliente</button>
+      <button onclick="registrarCliente()">Registrar Cliente</button>
     </div>
+
     <h3>Clientes Registrados</h3>
 
     <table>
@@ -57,11 +59,8 @@
           <th>Correo</th>
         </tr>
       </thead>
+
       <tbody id="tablaClientes">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
       </tbody>
     </table>
 
@@ -90,7 +89,7 @@
     <input type="number" id="tasaCredito">
     <br><br>
 
-    <label>Tipo de amortizacion</label>
+    <label>Tipo de amortizacion:</label>
 
     <label class="label-type">Frances</label>
     <input type="radio" name="tipoAmortizacion" value="frances" checked>
@@ -99,7 +98,7 @@
     <input type="radio" name="tipoAmortizacion" value="aleman">
 
     <div class="button-group">
-    <button onclick="calcularCredito()">Calcular credito</button>
+      <button onclick="calcularCredito()">Calcular credito</button>
     </div>
 
     <div id="resumenCredito">
@@ -116,16 +115,12 @@
           <th>Interes</th>
           <th>Total cuota</th>
           <th>Saldo restante</th>
+          <th>Pagar cuota</th>
+          <th>Estado</th>
         </tr>
       </thead>
 
       <tbody id="tablaAmortizacion">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
       </tbody>
     </table>
 
@@ -135,6 +130,6 @@
 
 <script src="../js/registroClientes.js"></script>
 <script src="../js/simularCredito.js"></script>
-<script src="../js/registroPagos.js"></script>
+
 </body>
 </html>

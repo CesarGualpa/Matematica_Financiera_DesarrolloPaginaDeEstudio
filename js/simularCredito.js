@@ -1,16 +1,16 @@
-function cargarClientesCredito(){
+function cargarClientesCredito() {
     let seleccionarCliente = document.getElementById("clienteCredito");
 
     seleccionarCliente.innerHTML = `<option value="">Seleccione un cliente</option>`;
 
-    for (let i = 0; i < datosDeLosClientes.length; i++){
+    for (let i = 0; i < datosDeLosClientes.length; i++) {
         seleccionarCliente.innerHTML += `
             <option value="${i}">${datosDeLosClientes[i].nombre}</option>
         `;
     }
 }
 
-function calcularCredito(){
+function calcularCredito() {
     let posicionCliente = document.getElementById("clienteCredito").value;
     let monto = Number(document.getElementById("montoCredito").value);
     let plazo = Number(document.getElementById("plazoCredito").value);
@@ -18,28 +18,28 @@ function calcularCredito(){
 
     let tipoAmortizacion = document.querySelector(`input[name="tipoAmortizacion"]:checked`).value;
 
-    if(posicionCliente == "" || monto <= 0 || plazo <= 0 || tasa <=0){
+    if (posicionCliente == "" || monto <= 0 || plazo <= 0 || tasa <= 0) {
         alert("Debe llenar todos los datos correctamente");
         return;
     }
 
     let interesMensual = tasa / 100 / 12;
 
-    if(tipoAmortizacion == "frances"){
+    if (tipoAmortizacion == "frances") {
         calcularSistemaFrances(posicionCliente, monto, plazo, tasa, interesMensual);
-    }else{
+    } else {
         calcularSistemaAleman(posicionCliente, monto, plazo, tasa, interesMensual);
     }
 }
 
-function calcularSistemaFrances(posicionCliente, monto, plazo, tasa, interesMensual){
+function calcularSistemaFrances(posicionCliente, monto, plazo, tasa, interesMensual) {
     let cliente = datosDeLosClientes[posicionCliente];
     let resumen = document.getElementById("resumenCredito");
     let tabla = document.getElementById("tablaAmortizacion");
 
     let saldo = monto;
 
-    let cuotaMensual = monto * (interesMensual * Math.pow(1 + interesMensual, plazo)) / (Math.pow(1 + interesMensual, plazo) - 1); 
+    let cuotaMensual = monto * (interesMensual * Math.pow(1 + interesMensual, plazo)) / (Math.pow(1 + interesMensual, plazo) - 1);
 
     resumen.innerHTML = `
         <h3>Resumen del credito</h3>
@@ -53,11 +53,11 @@ function calcularSistemaFrances(posicionCliente, monto, plazo, tasa, interesMens
 
     tabla.innerHTML = "";
 
-    for(let i = 1; i <= plazo; i++){
+    for (let i = 1; i <= plazo; i++) {
         let interes = saldo * interesMensual;
         let capital = cuotaMensual - interes;
 
-        if(capital > saldo){
+        if (capital > saldo) {
             capital = saldo;
         }
 
@@ -65,21 +65,31 @@ function calcularSistemaFrances(posicionCliente, monto, plazo, tasa, interesMens
 
         saldo = saldo - capital;
 
-        if(saldo < 0.01){
+        if (saldo < 0.01) {
             saldo = 0;
         }
 
-        tabla.innerHTML +=`
-            <tr>
+        let fechaPago = obtenerFechaPago(i);
+
+        tabla.innerHTML += `
+            <tr id="filaCuota${i}" class="cuota-pendiente" data-fecha="${fechaPago}">
                 <td>${i}</td>
-                <td>${obtenerFechaPago(i)}</td>
+                <td>${fechaPago}</td>
                 <td>$${capital.toFixed(2)}</td>
                 <td>$${interes.toFixed(2)}</td>
                 <td>$${totalCuota.toFixed(2)}</td>
                 <td>$${saldo.toFixed(2)}</td>
+                <td>
+                    <button id="botonPagar${i}" onclick="pagarCuota(${i})">
+                        Pagar
+                    </button>
+                </td>
+                <td id="estadoCuota${i}">Pendiente</td>
             </tr>
         `;
     }
+
+    comprobarCuotasAtrasadas();
 }
 
 function calcularSistemaAleman(posicionCliente, monto, plazo, tasa, interesMensual) {
@@ -112,17 +122,27 @@ function calcularSistemaAleman(posicionCliente, monto, plazo, tasa, interesMensu
             saldo = 0;
         }
 
+        let fechaPago = obtenerFechaPago(i);
+
         tabla.innerHTML += `
-            <tr>
+            <tr id="filaCuota${i}" class="cuota-pendiente" data-fecha="${fechaPago}">
                 <td>${i}</td>
-                <td>${obtenerFechaPago(i)}</td>
+                <td>${fechaPago}</td>
                 <td>$${capitalFijo.toFixed(2)}</td>
                 <td>$${interes.toFixed(2)}</td>
                 <td>$${totalCuota.toFixed(2)}</td>
                 <td>$${saldo.toFixed(2)}</td>
+                <td>
+                    <button id="botonPagar${i}" onclick="pagarCuota(${i})">
+                        Pagar
+                    </button>
+                </td>
+                <td id="estadoCuota${i}">Pendiente</td>
             </tr>
         `;
     }
+
+    comprobarCuotasAtrasadas();
 }
 
 function obtenerFechaPago(numeroCuota) {
@@ -143,4 +163,66 @@ function obtenerFechaPago(numeroCuota) {
     }
 
     return dia + "/" + mes + "/" + anio;
+}
+
+function pagarCuota(numeroCuota) {
+    let fila = document.getElementById("filaCuota" + numeroCuota);
+    let estado = document.getElementById("estadoCuota" + numeroCuota);
+    let boton = document.getElementById("botonPagar" + numeroCuota);
+
+    estado.innerHTML = "Pagado";
+
+    fila.classList.remove("cuota-pendiente");
+    fila.classList.remove("cuota-atrasada");
+    fila.classList.add("cuota-pagada");
+
+    boton.disabled = true;
+    boton.innerHTML = "Pagada";
+}
+
+function comprobarCuotasAtrasadas() {
+    let filas = document.querySelectorAll("#tablaAmortizacion tr");
+
+    let hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+
+    for (let i = 0; i < filas.length; i++) {
+        let fila = filas[i];
+
+        let numeroCuota = fila.children[0].innerHTML;
+        let fechaTexto = fila.getAttribute("data-fecha");
+        let fechaPago = convertirTextoAFecha(fechaTexto);
+
+        let estado = document.getElementById("estadoCuota" + numeroCuota);
+
+        if (estado.innerHTML == "Pagado") {
+            continue;
+        }
+
+        if (fechaPago < hoy) {
+            estado.innerHTML = "Atrasado";
+
+            fila.classList.remove("cuota-pendiente");
+            fila.classList.add("cuota-atrasada");
+        } else {
+            estado.innerHTML = "Pendiente";
+
+            fila.classList.remove("cuota-atrasada");
+            fila.classList.add("cuota-pendiente");
+        }
+    }
+}
+
+function convertirTextoAFecha(fechaTexto) {
+    let partes = fechaTexto.split("/");
+
+    let dia = Number(partes[0]);
+    let mes = Number(partes[1]) - 1;
+    let anio = Number(partes[2]);
+
+    let fecha = new Date(anio, mes, dia);
+
+    fecha.setHours(0, 0, 0, 0);
+
+    return fecha;
 }
