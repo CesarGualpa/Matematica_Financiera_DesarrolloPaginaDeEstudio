@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Aplicación Práctica</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+<header>
+  <h1>Matemática Financiera</h1>
+  <p>Página de estudio sobre fundamentos matemáticos aplicados a las finanzas</p>
+</header>
+
+<nav>
+  <a href="../index.html">Inicio</a>
+  <a href="01-conceptos.html">Conceptos Básicos</a>
+  <a href="02-test.html">Test</a>
+  <a href="03-aplicacion.html">Aplicación Práctica</a>
+  <a href="04-acerca.html">Acerca del Proyecto</a>
+</nav>
+
+<main>
+
+  <section>
+
+    <h2>Registro de Clientes</h2>
+
+    <h3>Datos del Cliente</h3>
+
+    <label for="nombreCliente">Nombre:</label>
+    <input type="text" id="nombreCliente">
+    <br><br>
+
+    <label for="cedulaCliente">Cedula:</label>
+    <input type="text" id="cedulaCliente">
+    <br><br>
+
+    <label for="telefonoCliente">Telefono:</label>
+    <input type="text" id="telefonoCliente">
+    <br><br>
+
+    <label for="correoCliente">Correo:</label>
+    <input type="email" id="correoCliente">
+    <br><br>
+
+    <div class="button-group">
+      <button onclick="registrarCliente()">Registrar Cliente</button>
+    </div>
+
+    <h3>Clientes Registrados</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cedula</th>
+          <th>Telefono</th>
+          <th>Correo</th>
+        </tr>
+      </thead>
+
+      <tbody id="tablaClientes">
+      </tbody>
+    </table>
+
+  </section>
+
+  <section id="simularCredito">
+    <h2>Simular Credito</h2>
+
+    <h3>Datos del credito</h3>
+
+    <label>Cliente:</label>
+    <select id="clienteCredito">
+      <option value="">Seleccione un cliente</option>
+    </select>
+    <br><br>
+
+    <label>Monto solicitado:</label>
+    <input type="number" id="montoCredito">
+    <br><br>
+
+    <label>Plazo en meses:</label>
+    <input type="number" id="plazoCredito">
+    <br><br>
+
+    <label>Tasa de interes anual:</label>
+    <input type="number" id="tasaCredito">
+    <br><br>
+
+    <label>Tipo de amortizacion:</label>
+
+    <label class="label-type">Frances</label>
+    <input type="radio" name="tipoAmortizacion" value="frances" checked>
+
+    <label class="label-type">Aleman</label>
+    <input type="radio" name="tipoAmortizacion" value="aleman">
+
+    <div class="button-group">
+      <button onclick="calcularCredito()">Calcular credito</button>
+    </div>
+
+    <div id="resumenCredito">
+    </div>
+
+    <h3>Tabla de amortizacion</h3>
+
+    <label>Fecha de prueba:</label>
+    <input type="date" id="fechaPrueba">
+
+    <button onclick="comprobarCuotasAtrasadas()">
+      Comprobar cuotas
+    </button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>N° cuota</th>
+          <th>Fecha de pago</th>
+          <th>Capital</th>
+          <th>Interes</th>
+          <th>Total cuota</th>
+          <th>Saldo restante</th>
+          <th>Pagar cuota</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+
+      <tbody id="tablaAmortizacion">
+      </tbody>
+    </table>
+
+  </section>
+
+</main>
+
+<script src="../js/registroClientes.js"></script>
+<script src="../js/simularCredito.js"></script>
+
+</body>
+</html>
