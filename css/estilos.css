@@ -352,3 +352,42 @@ nav a:hover {
   .label-type{
     text-align: center;
   }
+
+  .tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.boton-rollback {
+  background-color: #b45309;
+}
+
+.boton-rollback:hover {
+  background-color: #92400e;
+}
+
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background-color: #9ca3af;
+}
+
+.cuota-pendiente {
+  background-color: #ffffff;
+}
+
+.cuota-atrasada {
+  background-color: #fde8e8;
+}
+
+.cuota-pagada {
+  background-color: #e8f5ef;
+}
+
+.fila-totales td {
+  background-color: #eef4f8;
+  font-weight: bold;
+}
