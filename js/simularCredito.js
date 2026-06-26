@@ -97,9 +97,7 @@ function calcularSistemaFrances(posicionCliente, monto, plazo, tasa, interesMens
                     <button id="botonPagar${i}" onclick="pagarCuota(${i})">
                         Pagar
                     </button>
-                </td>
 
-                <td>
                     <button 
                         id="botonRollback${i}" 
                         class="boton-rollback"
@@ -184,9 +182,7 @@ function calcularSistemaAleman(posicionCliente, monto, plazo, tasa, interesMensu
                     <button id="botonPagar${i}" onclick="pagarCuota(${i})">
                         Pagar
                     </button>
-                </td>
 
-                <td>
                     <button 
                         id="botonRollback${i}" 
                         class="boton-rollback"
@@ -213,10 +209,9 @@ function agregarFilaTotales(totalCapital, totalInteres, totalCuotas) {
     tabla.innerHTML += `
         <tr class="fila-totales">
             <td colspan="2"><strong>Totales</strong></td>
-            <td><strong>$${totalCapital.toFixed(2)}</strong></td>
-            <td><strong>$${totalInteres.toFixed(2)}</strong></td>
-            <td><strong>$${totalCuotas.toFixed(2)}</strong></td>
-            <td></td>
+            <td>$${totalCapital.toFixed(2)}</td>
+            <td>$${totalInteres.toFixed(2)}</td>
+            <td>$${totalCuotas.toFixed(2)}</td>
             <td></td>
             <td></td>
             <td></td>

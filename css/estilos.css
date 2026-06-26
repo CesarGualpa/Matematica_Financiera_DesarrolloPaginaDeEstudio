@@ -334,7 +334,7 @@ nav a:hover {
     background-color: #1f8f5f; 
     color: white; 
     border: none; 
-    padding: 11px 16px; 
+    padding: 11px 10px; 
     margin: 8px 5px; 
     border-radius: 5px; 
     cursor: pointer; 
@@ -389,5 +389,4 @@ button:disabled:hover {
 
 .fila-totales td {
   background-color: #eef4f8;
-  font-weight: bold;
 }
